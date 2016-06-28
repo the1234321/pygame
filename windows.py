@@ -43,10 +43,10 @@ class windows(object):
         self.refresh_circle()
 
     def addpoint(self):
-        nodeid=self.n1.nodenum+2
+        nodeid=self.n1.nodenum+1
         self.n1.addnode(nodeid)
-        ranx = random.randint(25, self.x - 25)
-        rany = random.randint(25, self.y - 25)
+        ranx = random.randint(20, self.x - 20)
+        rany = random.randint(20, self.y - 20)
         self.n1.nodes[nodeid].setpoint(ranx, rany)
         self.refresh_circle()
 

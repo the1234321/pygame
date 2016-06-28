@@ -7,6 +7,7 @@ class node():
         self.ins=[]
         self.x=0
         self.y=0
+        self.size=10
 
     def addout(self,nodeid):
         self.outs.append(nodeid)
@@ -15,14 +16,14 @@ class node():
     def setpoint(self,x,y):
         self.x=x
         self.y=y
-    def drawcircle(self,screen,maincolor):
+    def drawcircle(self,screen,maincolor,size):
         position = self.x, self.y
-        radius = 20
-        width = 2
+        radius = size
+        width = int(size/5)
 
-        myfont = pygame.font.SysFont("simsunnsimsun", 15)
-        txtImage = myfont.render("点"+str(self.nodeid), True, maincolor)
+        myfont = pygame.font.SysFont("simsunnsimsun", int(size*1.5))
+        txtImage = myfont.render(" "+str(self.nodeid), True, maincolor)
 
-        screen.blit(txtImage, (position[0] - 11, position[1] - 9))
+        screen.blit(txtImage, (position[0], position[1]+int(size/2)))
         # pygame.draw.rect(self.screen, color, (200, 300, 100, 200), width)
         pygame.draw.circle(screen, maincolor, position, radius, width)
